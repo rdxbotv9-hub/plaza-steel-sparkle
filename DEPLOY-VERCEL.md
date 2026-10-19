@@ -12,9 +12,11 @@ Vercel ke project setup screen par:
 | Setting | Value |
 | --- | --- |
 | Framework Preset | **Other** |
-| Build Command | `npm run build` |
+| Build Command | `NITRO_PRESET=vercel bun run build` |
 | Output Directory | `.vercel/output` |
-| Install Command | `npm install` |
+| Install Command | `bun install --frozen-lockfile` |
+
+Project me `vercel.json` ye settings pehle se set karta hai; Vercel ke purane manual overrides hon to unhein reset karein. Is se wahi package versions install hoti hain jo preview me test hain.
 
 ## 3. Environment Variables (bohat zaroori)
 
@@ -29,10 +31,14 @@ Vercel ke project setup screen par:
 
 `NITRO_PRESET=vercel` ke bina site build ho kar bhi chalegi nahi — ye Vercel ke liye server output banata hai.
 
+Build command bhi `NITRO_PRESET=vercel` set karta hai. Lovable ke internal environment variables Vercel par copy na karein. Apna admin password aur secret sirf Vercel Environment Variables me rakhein, public code me nahi.
+
 ## 4. Deploy
 
 **Deploy** dabayein. 2-3 minute me live link mil jayega, jaise
 `https://plaza-steel.vercel.app`.
+
+Deploy ke baad Rate List me item search, West Point quantity, estimate bill aur admin login check karein. Graceware aur West Point ke external links har page ke upar milenge aur nayi tab me khulenge. Local preview ki jaanch Vercel deployment ki guarantee nahi; Vercel ka live link milne par ye checks wahan bhi zaroor karein.
 
 ## 5. Rate list update karna
 
