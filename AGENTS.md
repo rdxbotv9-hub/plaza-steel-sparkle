@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep replacement stock snapshots as valid JSON in `list/ALL_STOCK.json`, preserving duplicate supplier descriptions as `vendor`; this replaces removed rows and makes imports parse reliably.
+- Set the Vercel Nitro target only in `vercel.json`'s build command and use the Bun lockfile; Lovable keeps its managed Worker target and Vercel installs the same dependency versions.
