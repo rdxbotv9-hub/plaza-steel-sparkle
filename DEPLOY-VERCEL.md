@@ -20,18 +20,15 @@ Project me `vercel.json` ye settings pehle se set karta hai; Vercel ke purane ma
 
 ## 3. Environment Variables (bohat zaroori)
 
-**Settings → Environment Variables** me ye 4 add karein (Production + Preview dono):
+**Settings → Environment Variables** me ye 3 add karein (Production + Preview dono):
 
 | Name | Value |
 | --- | --- |
-| `NITRO_PRESET` | `vercel` |
 | `ADMIN_USERNAME` | `adminplaza` |
 | `ADMIN_PASSWORD` | `34402` |
 | `SESSION_SECRET` | koi bhi 40+ characters ki random line (kisi ko na batayein) |
 
-`NITRO_PRESET=vercel` ke bina site build ho kar bhi chalegi nahi — ye Vercel ke liye server output banata hai.
-
-Build command bhi `NITRO_PRESET=vercel` set karta hai. Lovable ke internal environment variables Vercel par copy na karein. Apna admin password aur secret sirf Vercel Environment Variables me rakhein, public code me nahi.
+`vercel.json` ka build command khud `NITRO_PRESET=vercel` set karta hai; isay alag environment variable me add karna zaroori nahi. Lovable ke internal environment variables Vercel par copy na karein. Apna admin password aur secret sirf Vercel Environment Variables me rakhein, public code me nahi.
 
 ## 4. Deploy
 
