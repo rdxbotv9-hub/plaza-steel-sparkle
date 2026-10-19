@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep replacement stock snapshots as valid JSON in `list/ALL_STOCK.json`, preserving duplicate supplier descriptions as `vendor`; this replaces removed rows and makes imports parse reliably.

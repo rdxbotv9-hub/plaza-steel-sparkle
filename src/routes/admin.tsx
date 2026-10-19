@@ -13,6 +13,8 @@ export const Route = createFileRoute("/admin")({
       { name: "description", content: "Private stock and cost portal for Plaza Steel & Crockery staff." },
       { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Admin Portal — Plaza Steel & Crockery" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       { property: "og:description", content: "Private staff portal." },
     ],
   }),

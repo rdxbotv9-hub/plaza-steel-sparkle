@@ -22,6 +22,8 @@ export const Route = createFileRoute("/")({
           "Search live rates for steel, crockery and home appliances at Plaza Steel & Crockery. Filter by category and budget, then order on WhatsApp.",
       },
       { property: "og:title", content: "Plaza Steel & Crockery — Rate List" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       {
         property: "og:description",
         content: "Search steel, crockery and appliance rates by category and budget.",
