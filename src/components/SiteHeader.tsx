@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ExternalLink } from "lucide-react";
 
 import { useBill } from "@/lib/estimate-store";
 
@@ -53,6 +54,18 @@ export function SiteHeader() {
             ))}
           </nav>
         </div>
+      </div>
+      <div className="border-t border-border/50 bg-accent/30">
+        <nav aria-label="Brand websites" className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 py-2">
+          <span className="text-[10px] uppercase tracking-widest text-muted-foreground">Brand websites</span>
+          <a href="https://graceware.shop/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-display text-sm text-chrome transition-colors hover:text-gold">
+            Graceware <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+          <span className="h-4 border-l border-border" aria-hidden="true" />
+          <a href="https://www.westpoint.pk/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-display text-sm text-chrome transition-colors hover:text-gold">
+            West Point <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+          </a>
+        </nav>
       </div>
     </header>
   );
