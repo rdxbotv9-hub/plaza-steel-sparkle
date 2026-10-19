@@ -22,6 +22,8 @@ export const Route = createFileRoute("/estimate")({
           "Build an estimate bill from the Plaza Steel & Crockery rate list, adjust prices, apply discount and send or print it.",
       },
       { property: "og:title", content: "Estimate Bill Maker — Plaza Steel & Crockery" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       {
         property: "og:description",
         content: "Add items, edit prices, apply a discount and print or WhatsApp the estimate.",

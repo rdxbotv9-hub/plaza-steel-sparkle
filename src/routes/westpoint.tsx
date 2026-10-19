@@ -22,6 +22,8 @@ export const Route = createFileRoute("/westpoint")({
           "Search West Point (WP) appliances at Plaza Steel & Crockery with live rates and available quantity, then buy on WhatsApp.",
       },
       { property: "og:title", content: "West Point Stock & Rates — Plaza" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
       {
         property: "og:description",
         content: "West Point appliance rates with available quantity and instant WhatsApp ordering.",
