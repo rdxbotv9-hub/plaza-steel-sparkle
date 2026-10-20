@@ -48,6 +48,7 @@
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
   --color-success: var(--success);
+  --color-product-stage: var(--product-stage);
 }
 
 :root {
@@ -83,6 +84,7 @@
   --whatsapp: oklch(0.64 0.16 152);
   --whatsapp-foreground: oklch(0.99 0 0);
   --success: oklch(0.68 0.15 150);
+  --product-stage: oklch(0.99 0 0);
 
   --gradient-steel: linear-gradient(
     160deg,
