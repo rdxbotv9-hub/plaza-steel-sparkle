@@ -1,0 +1,22 @@
+export const gracewareCategories = ["Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots"] as const;
+export type GracewareCategory = (typeof gracewareCategories)[number];
+
+export type GracewareProduct = {
+  id: number;
+  name: string;
+  category: GracewareCategory;
+  sourceUrl: string;
+  image: string;
+};
+
+export function filterGraceware(
+  products: GracewareProduct[],
+  category: string,
+  search: string,
+): GracewareProduct[] {
+  const term = search.trim().toLocaleLowerCase();
+  return products.filter((product) =>
+    (category === "All" || product.category === category) &&
+    (!term || product.name.toLocaleLowerCase().includes(term)),
+  );
+}
