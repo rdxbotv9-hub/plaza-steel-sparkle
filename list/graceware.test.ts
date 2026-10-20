@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { filterGraceware, gracewareCategories, type GracewareProduct } from "./graceware";
-import catalogue from "./graceware-products.json";
+import { filterGraceware, gracewareCategories, type GracewareProduct } from "../src/lib/graceware";
+import catalogue from "../src/lib/graceware-products.json";
 
 const products: GracewareProduct[] = gracewareCategories.map((category, index) => ({
   id: index,
