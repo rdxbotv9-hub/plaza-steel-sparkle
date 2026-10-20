@@ -1,15 +1,31 @@
 import { describe, expect, test } from "bun:test";
 import { filterGraceware, gracewareCategories, type GracewareProduct } from "./graceware";
+import catalogue from "./graceware-products.json";
 
 const products: GracewareProduct[] = gracewareCategories.map((category, index) => ({
   id: index,
   name: `${category} Sample`,
   category,
+  categories: [category],
   sourceUrl: "https://graceware.shop/",
   image: "/sample.jpg",
 }));
 
 describe("Graceware collection rules", () => {
+  test("authentic catalogue contains names and hosted photos, never prices", () => {
+    expect(catalogue).toHaveLength(113);
+    for (const product of catalogue) {
+      expect(product.name.length).toBeGreaterThan(0);
+      expect(product.image.startsWith("/__l5e/assets-v1/")).toBe(true);
+      expect(product.sourceUrl.startsWith("https://graceware.shop/products/")).toBe(true);
+      expect(Object.keys(product).some((key) => /price|rate|cost/i.test(key))).toBe(false);
+    }
+  });
+  test("gift hotpots remain available in both requested categories", () => {
+    const product = { ...products[0], id: 1, name: "Gift Hotpot", category: "Gift Sets" as const, categories: ["Gift Sets", "Hot Pots"] as GracewareProduct["categories"], image: "/sample.jpg", sourceUrl: "https://graceware.shop/" };
+    expect(filterGraceware([product], "Gift Sets", "")).toHaveLength(1);
+    expect(filterGraceware([product], "Hot Pots", "")).toHaveLength(1);
+  });
   test("includes the four requested categories", () => {
     expect([...gracewareCategories]).toEqual(["Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots"]);
   });

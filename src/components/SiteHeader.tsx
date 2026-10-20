@@ -6,6 +6,7 @@ import { useBill } from "@/lib/estimate-store";
 const links = [
   { to: "/", label: "Rate List" },
   { to: "/westpoint", label: "West Point" },
+  { to: "/graceware", label: "Graceware" },
   { to: "/estimate", label: "Estimate Bill" },
   { to: "/admin", label: "Admin" },
 ] as const;

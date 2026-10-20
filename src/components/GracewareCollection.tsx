@@ -24,7 +24,7 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
             <Button key={option} variant={category === option ? "default" : "outline"}
               aria-pressed={category === option} onClick={() => setCategory(option)}>
               {option}
-              <span className="text-xs opacity-70">{option === "All" ? products.length : products.filter((p) => p.category === option).length}</span>
+              <span className="text-xs opacity-70">{option === "All" ? products.length : products.filter((p) => p.categories.some((value) => value === option)).length}</span>
             </Button>
           ))}
         </nav>

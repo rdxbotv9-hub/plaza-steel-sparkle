@@ -93,6 +93,12 @@ function PublicRateList() {
             West Point Stock
           </Link>
           <Link
+            to="/graceware"
+            className="rounded-full border border-border px-6 py-3 font-display text-sm tracking-wide text-muted-foreground transition-colors hover:border-ring hover:text-foreground sm:text-base"
+          >
+            Graceware Collection
+          </Link>
+          <Link
             to="/estimate"
             className="rounded-full border border-border px-6 py-3 font-display text-sm tracking-wide text-muted-foreground transition-colors hover:border-ring hover:text-foreground sm:text-base"
           >

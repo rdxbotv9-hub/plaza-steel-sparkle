@@ -5,6 +5,7 @@ export type GracewareProduct = {
   id: number;
   name: string;
   category: GracewareCategory;
+  categories: GracewareCategory[];
   sourceUrl: string;
   image: string;
 };
@@ -16,7 +17,7 @@ export function filterGraceware(
 ): GracewareProduct[] {
   const term = search.trim().toLocaleLowerCase();
   return products.filter((product) =>
-    (category === "All" || product.category === category) &&
+    (category === "All" || product.categories.some((value) => value === category)) &&
     (!term || product.name.toLocaleLowerCase().includes(term)),
   );
 }
