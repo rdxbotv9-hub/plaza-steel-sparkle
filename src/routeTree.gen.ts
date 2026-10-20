@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as EstimateRouteImport } from './routes/estimate'
+import { Route as GracewareRouteImport } from './routes/graceware'
 import { Route as WestpointRouteImport } from './routes/westpoint'
 
 const IndexRoute = IndexRouteImport.update({
@@ -29,6 +30,11 @@ const EstimateRoute = EstimateRouteImport.update({
   path: '/estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GracewareRoute = GracewareRouteImport.update({
+  id: '/graceware',
+  path: '/graceware',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WestpointRoute = WestpointRouteImport.update({
   id: '/westpoint',
   path: '/westpoint',
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/estimate': typeof EstimateRoute
+  '/graceware': typeof GracewareRoute
   '/westpoint': typeof WestpointRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/estimate': typeof EstimateRoute
+  '/graceware': typeof GracewareRoute
   '/westpoint': typeof WestpointRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/estimate': typeof EstimateRoute
+  '/graceware': typeof GracewareRoute
   '/westpoint': typeof WestpointRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/admin' | '/estimate' | '/westpoint'
+  fullPaths: '/' | '/admin' | '/estimate' | '/graceware' | '/westpoint'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/admin' | '/estimate' | '/westpoint'
-  id: '__root__' | '/' | '/admin' | '/estimate' | '/westpoint'
+  to: '/' | '/admin' | '/estimate' | '/graceware' | '/westpoint'
+  id: '__root__' | '/' | '/admin' | '/estimate' | '/graceware' | '/westpoint'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   EstimateRoute: typeof EstimateRoute
+  GracewareRoute: typeof GracewareRoute
   WestpointRoute: typeof WestpointRoute
 }
 
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EstimateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/graceware': {
+      id: '/graceware'
+      path: '/graceware'
+      fullPath: '/graceware'
+      preLoaderRoute: typeof GracewareRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/westpoint': {
       id: '/westpoint'
       path: '/westpoint'
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   EstimateRoute: EstimateRoute,
+  GracewareRoute: GracewareRoute,
   WestpointRoute: WestpointRoute,
 }
 export const routeTree = rootRouteImport
