@@ -1,5 +1,6 @@
 # Current tasks
 
+- [ ] Add every product from the uploaded Graceware and dinner-set lists to the appropriate photo catalogues, using the provided product images and no prices.
 - [x] Add 113 Graceware products with authentic names and hosted pictures only; all four categories, search, photo enlargement and mobile layout verified.
 - [x] Add Graceware and West Point website links across the site; verified on all four pages.
 - [x] Configure Vercel deployment and verify the local experience.
