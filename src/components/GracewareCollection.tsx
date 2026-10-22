@@ -55,6 +55,15 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
             <div className="p-3 sm:p-4">
               <p className="mb-1 text-xs text-gold">{product.category}</p>
               <h2 className="break-words font-display text-base leading-snug tracking-normal text-card-foreground sm:text-lg">{product.name}</h2>
+              <a
+                href={buyLink(product)}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-hero mt-3 flex items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-bold tracking-wide"
+              >
+                <ShoppingCart aria-hidden="true" className="h-4 w-4" />
+                Buy on WhatsApp
+              </a>
             </div>
           </article>
         ))}
