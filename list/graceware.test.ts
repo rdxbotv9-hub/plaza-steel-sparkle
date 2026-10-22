@@ -43,8 +43,8 @@ describe("Graceware collection rules", () => {
     expect(filterGraceware([product], "Gift Sets", "")).toHaveLength(1);
     expect(filterGraceware([product], "Hot Pots", "")).toHaveLength(1);
   });
-  test("includes the four requested categories", () => {
-    expect([...gracewareCategories]).toEqual(["Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots"]);
+  test("includes the six requested categories", () => {
+    expect([...gracewareCategories]).toEqual(["Dinner Sets", "Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots", "Household"]);
   });
   test("category selection excludes products from other categories", () => {
     expect(filterGraceware(products, "Bath Sets", "").map((p) => p.name)).toEqual(["Bath Sets Sample"]);
