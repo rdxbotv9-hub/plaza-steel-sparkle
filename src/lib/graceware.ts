@@ -1,4 +1,4 @@
-export const gracewareCategories = ["Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots"] as const;
+export const gracewareCategories = ["Dinner Sets", "Gift Sets", "Tray Sets", "Bath Sets", "Hot Pots", "Household"] as const;
 export type GracewareCategory = (typeof gracewareCategories)[number];
 
 export type GracewareProduct = {
