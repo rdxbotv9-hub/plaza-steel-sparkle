@@ -20,7 +20,7 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
       <header className="border-b border-border pb-6">
         <p className="mb-2 text-xs font-semibold uppercase text-gold">PLAZA STEEL &amp; CROCKERY</p>
         <h1 className="font-display text-4xl tracking-normal text-foreground sm:text-5xl">Graceware Collection</h1>
-        <p className="mt-3 text-muted-foreground">Gift Sets · Tray Sets · Bath Sets · Hot Pots</p>
+        <p className="mt-3 text-muted-foreground">Dinner Sets · Gift Sets · Tray Sets · Bath Sets · Hot Pots · Household</p>
       </header>
 
       <div className="my-6 flex flex-wrap items-center justify-between gap-4">

@@ -13,12 +13,29 @@ const products: GracewareProduct[] = gracewareCategories.map((category, index) =
 
 describe("Graceware collection rules", () => {
   test("authentic catalogue contains names and hosted photos, never prices", () => {
-    expect(catalogue).toHaveLength(113);
+    expect(catalogue).toHaveLength(186);
     for (const product of catalogue) {
       expect(product.name.length).toBeGreaterThan(0);
       expect(product.image.startsWith("/__l5e/assets-v1/")).toBe(true);
       expect(product.sourceUrl.startsWith("https://graceware.shop/products/")).toBe(true);
       expect(Object.keys(product).some((key) => /price|rate|cost/i.test(key))).toBe(false);
+    }
+  });
+  test("catalogue covers the six requested categories", () => {
+    for (const category of gracewareCategories) {
+      expect(catalogue.some((p) => p.categories.includes(category))).toBe(true);
+    }
+  });
+  test("dinner-set list items are present with hosted photos", () => {
+    for (const name of ["Diner Set Grace Artive (8P)", "Diner Set Grace Neorah (8P)", "Diner Set Grace Posh (6P)"]) {
+      const product = catalogue.find((p) => p.name === name);
+      expect(product).toBeDefined();
+      expect(product!.category).toBe("Dinner Sets");
+    }
+  });
+  test("household list items are present with hosted photos", () => {
+    for (const name of ["Basket Grace Miniso", "Grace Dustbin (40LTR)", "Laundry Grace Pixel"]) {
+      expect(catalogue.some((p) => p.name === name)).toBe(true);
     }
   });
   test("gift hotpots remain available in both requested categories", () => {
