@@ -1,8 +1,13 @@
 import { useMemo, useState } from "react";
-import { Search, ZoomIn } from "lucide-react";
+import { Search, ShoppingCart, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { filterGraceware, gracewareCategories, type GracewareProduct } from "@/lib/graceware";
+import { SHOP_WHATSAPP_DIGITS, waLink } from "@/lib/stock-types";
+
+function buyLink(product: GracewareProduct): string {
+  return waLink(SHOP_WHATSAPP_DIGITS, `Assalam o Alaikum! Mujhe "${product.name}" chahiye — Plaza Steel & Crockery`);
+}
 
 export function GracewareCollection({ products }: { products: GracewareProduct[] }) {
   const [category, setCategory] = useState("All");
