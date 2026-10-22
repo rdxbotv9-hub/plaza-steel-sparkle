@@ -76,6 +76,17 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
           <DialogDescription>{selected?.category}</DialogDescription>
           {selected && <img src={selected.image} alt={selected.name} width={1000} height={1000}
             className="max-h-[65dvh] w-full rounded-md bg-product-stage object-contain" />}
+          {selected && (
+            <a
+              href={buyLink(selected)}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-hero mt-3 flex items-center justify-center gap-2 rounded-full px-5 py-3 font-display text-sm tracking-wide"
+            >
+              <ShoppingCart aria-hidden="true" className="h-4 w-4" />
+              Buy on WhatsApp
+            </a>
+          )}
         </DialogContent>
       </Dialog>
     </div>
