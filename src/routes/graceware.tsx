@@ -7,9 +7,9 @@ export const Route = createFileRoute("/graceware")({
   head: () => ({
     meta: [
       { title: "Graceware Collection — Plaza Steel & Crockery" },
-      { name: "description", content: "Browse original Graceware gift sets, tray sets, bath sets and hot pots at Plaza Steel & Crockery, with authentic product names and photographs." },
+      { name: "description", content: "Browse original Graceware dinner sets, gift sets, tray sets, bath sets, hot pots and household items at Plaza Steel & Crockery, with authentic product names and photographs — order on WhatsApp." },
       { property: "og:title", content: "Graceware Collection — Plaza Steel & Crockery" },
-      { property: "og:description", content: "Explore Graceware gift sets, tray sets, bath sets and hot pots in our photo collection." },
+      { property: "og:description", content: "Explore Graceware dinner sets, gift sets, tray sets, bath sets, hot pots and household items in our photo collection." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

@@ -1,8 +1,13 @@
 import { useMemo, useState } from "react";
-import { Search, ZoomIn } from "lucide-react";
+import { Search, ShoppingCart, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { filterGraceware, gracewareCategories, type GracewareProduct } from "@/lib/graceware";
+import { SHOP_WHATSAPP_DIGITS, waLink } from "@/lib/stock-types";
+
+function buyLink(product: GracewareProduct): string {
+  return waLink(SHOP_WHATSAPP_DIGITS, `Assalam o Alaikum! Mujhe "${product.name}" chahiye — Plaza Steel & Crockery`);
+}
 
 export function GracewareCollection({ products }: { products: GracewareProduct[] }) {
   const [category, setCategory] = useState("All");
@@ -15,7 +20,7 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
       <header className="border-b border-border pb-6">
         <p className="mb-2 text-xs font-semibold uppercase text-gold">PLAZA STEEL &amp; CROCKERY</p>
         <h1 className="font-display text-4xl tracking-normal text-foreground sm:text-5xl">Graceware Collection</h1>
-        <p className="mt-3 text-muted-foreground">Gift Sets · Tray Sets · Bath Sets · Hot Pots</p>
+        <p className="mt-3 text-muted-foreground">Dinner Sets · Gift Sets · Tray Sets · Bath Sets · Hot Pots · Household</p>
       </header>
 
       <div className="my-6 flex flex-wrap items-center justify-between gap-4">
@@ -50,6 +55,15 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
             <div className="p-3 sm:p-4">
               <p className="mb-1 text-xs text-gold">{product.category}</p>
               <h2 className="break-words font-display text-base leading-snug tracking-normal text-card-foreground sm:text-lg">{product.name}</h2>
+              <a
+                href={buyLink(product)}
+                target="_blank"
+                rel="noreferrer"
+                className="btn-hero mt-3 flex items-center justify-center gap-2 rounded-full px-4 py-2 text-xs font-bold tracking-wide"
+              >
+                <ShoppingCart aria-hidden="true" className="h-4 w-4" />
+                Buy on WhatsApp
+              </a>
             </div>
           </article>
         ))}
@@ -62,6 +76,17 @@ export function GracewareCollection({ products }: { products: GracewareProduct[]
           <DialogDescription>{selected?.category}</DialogDescription>
           {selected && <img src={selected.image} alt={selected.name} width={1000} height={1000}
             className="max-h-[65dvh] w-full rounded-md bg-product-stage object-contain" />}
+          {selected && (
+            <a
+              href={buyLink(selected)}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-hero mt-3 flex items-center justify-center gap-2 rounded-full px-5 py-3 font-display text-sm tracking-wide"
+            >
+              <ShoppingCart aria-hidden="true" className="h-4 w-4" />
+              Buy on WhatsApp
+            </a>
+          )}
         </DialogContent>
       </Dialog>
     </div>
